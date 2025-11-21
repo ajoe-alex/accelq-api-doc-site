@@ -104,7 +104,7 @@
           <tbody>
             <tr>
               <td><code>Authorization</code></td>
-              <td><code>Bearer <access_token></code></td>
+              <td><code>Bearer &lt;access_token&gt;</code></td>
             </tr>
             <tr>
               <td><code>Accept</code></td>
@@ -125,6 +125,12 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td><code>access_token</code></td>
+              <td>string</td>
+              <td>Yes</td>
+              <td>Access token of the user</td>
+            </tr>
             <tr>
               <td><code>page</code></td>
               <td>number</td>
@@ -237,6 +243,11 @@
         </h2>
         <div class="editable-group" data-astro-cid-ccwuwaab>
           <h4 data-astro-cid-ccwuwaab>Parameters</h4>
+          <div class="editable-field" data-astro-cid-ccwuwaab> <label data-astro-cid-ccwuwaab> access_token <span
+                class="field-type" data-astro-cid-ccwuwaab>(string)</span> <span class="required"
+                data-astro-cid-ccwuwaab>*</span> </label> <input type="text" data-param-name="access_token"
+              data-default="asdadasda" value="asdadasda" placeholder="Access token of the user" data-astro-cid-ccwuwaab>
+          </div>
           <div class="editable-field" data-astro-cid-ccwuwaab> <label data-astro-cid-ccwuwaab> page <span
                 class="field-type" data-astro-cid-ccwuwaab>(number)</span> </label> <input type="text"
               data-param-name="page" data-default="1" value="1" placeholder="Page number (default: 1)"
@@ -264,7 +275,7 @@
 
 </html>
 <script>(function () {
-    const interactiveData = { "method": "GET", "request_url": "https://api.example.com/v1/users", "headers": { "Authorization": "Bearer <access_token>", "Accept": "application/json" }, "parameters": { "page": { "type": "number", "description": "Page number (default: 1)", "default": "1" }, "limit": { "type": "number", "description": "Number of results per page (default: 10)", "default": "10" }, "status": { "type": "string", "description": "Filter by user status (active, inactive, pending)", "default": "active" } }, "curlContent": "curl -X GET \"https://api.example.com/v1/users?page=${{page}}&limit=${{limit}}&status=${{status}}\" \\\n  -H \"Authorization: Bearer ${{Authorization}}\" \\\n  -H \"Accept: application/json\"\n" };
+    const interactiveData = { "method": "GET", "request_url": "https://api.example.com/v1/users", "headers": { "Authorization": "Bearer &lt;access_token&gt;", "Accept": "application/json" }, "parameters": { "access_token": { "type": "string", "required": true, "description": "Access token of the user", "default": "asdadasda" }, "page": { "type": "number", "description": "Page number (default: 1)", "default": "1" }, "limit": { "type": "number", "description": "Number of results per page (default: 10)", "default": "10" }, "status": { "type": "string", "description": "Filter by user status (active, inactive, pending)", "default": "active" } }, "curlContent": "curl -X GET \"https://api.example.com/v1/users?page=${{page}}&limit=${{limit}}&status=${{status}}\" \\\n  -H \"Authorization: Bearer ${{Authorization}}\" \\\n  -H \"Accept: application/json\"\n" };
 
     // Get the curl template
     const curlTemplate = interactiveData.curlContent;

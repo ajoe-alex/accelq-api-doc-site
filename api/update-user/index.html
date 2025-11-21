@@ -130,6 +130,12 @@
           </thead>
           <tbody>
             <tr>
+              <td><code>access_token</code></td>
+              <td>string</td>
+              <td>Yes</td>
+              <td>Access token of the user</td>
+            </tr>
+            <tr>
               <td><code>userId</code></td>
               <td>string</td>
               <td>Yes</td>
@@ -219,6 +225,11 @@
         </h2>
         <div class="editable-group" data-astro-cid-ccwuwaab>
           <h4 data-astro-cid-ccwuwaab>Parameters</h4>
+          <div class="editable-field" data-astro-cid-ccwuwaab> <label data-astro-cid-ccwuwaab> access_token <span
+                class="field-type" data-astro-cid-ccwuwaab>(string)</span> <span class="required"
+                data-astro-cid-ccwuwaab>*</span> </label> <input type="text" data-param-name="access_token"
+              data-default="asdadasda" value="asdadasda" placeholder="Access token of the user" data-astro-cid-ccwuwaab>
+          </div>
           <div class="editable-field" data-astro-cid-ccwuwaab> <label data-astro-cid-ccwuwaab> userId <span
                 class="field-type" data-astro-cid-ccwuwaab>(string)</span> <span class="required"
                 data-astro-cid-ccwuwaab>*</span> </label> <input type="text" data-param-name="userId"
@@ -258,7 +269,7 @@
 
 </html>
 <script>(function () {
-    const interactiveData = { "method": "PUT", "request_url": "https://api.example.com/v1/users/{userId}", "headers": { "Authorization": "Bearer &lt;access_token&gt;", "Content-Type": "application/json", "Accept": "application/json" }, "parameters": { "userId": { "type": "string", "required": true, "description": "Unique identifier of the user to be updated", "default": "12345" }, "email": { "type": "string", "required": true, "description": "User's email address", "default": "newuser@example.com" }, "name": { "type": "string", "required": true, "description": "User's full name", "default": "New User" }, "role": { "type": "string", "required": false, "description": "User role (admin, user, viewer). Default: user", "default": "user" } }, "curlContent": "curl -X PUT \"https://api.example.com/v1/${{userId}}\" \\\n  -H \"Authorization: Bearer ${{Authorization}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n    \"email\": \"${{email}}\",\n    \"name\": \"${{name}}\",\n    \"role\": \"${{role}}\"\n  }'\n" };
+    const interactiveData = { "method": "PUT", "request_url": "https://api.example.com/v1/users/{userId}", "headers": { "Authorization": "Bearer &lt;access_token&gt;", "Content-Type": "application/json", "Accept": "application/json" }, "parameters": { "access_token": { "type": "string", "required": true, "description": "Access token of the user", "default": "asdadasda" }, "userId": { "type": "string", "required": true, "description": "Unique identifier of the user to be updated", "default": "12345" }, "email": { "type": "string", "required": true, "description": "User's email address", "default": "newuser@example.com" }, "name": { "type": "string", "required": true, "description": "User's full name", "default": "New User" }, "role": { "type": "string", "required": false, "description": "User role (admin, user, viewer). Default: user", "default": "user" } }, "curlContent": "curl -X PUT \"https://api.example.com/v1/${{userId}}\" \\\n  -H \"Authorization: Bearer ${{Authorization}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n    \"email\": \"${{email}}\",\n    \"name\": \"${{name}}\",\n    \"role\": \"${{role}}\"\n  }'\n" };
 
     // Get the curl template
     const curlTemplate = interactiveData.curlContent;
