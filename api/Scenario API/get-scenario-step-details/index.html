@@ -21,19 +21,7 @@ html body{padding:0;margin:0}.api-doc[data-astro-cid-hoo3v4jr]{max-width:100%}.a
 
 <h2>Parameters</h2>
 
-<table><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>accelqLoginUrl</code></td><td>string</td><td>Yes</td><td>ACCELQ login URL (e.g., https://yourcompany.accelq.io)</td></tr><tr><td><code>tenantCode</code></td><td>string</td><td>Yes</td><td>URL parameter: tenantCode</td></tr><tr><td><code>projectName</code></td><td>string</td><td>Yes</td><td>URL parameter: projectName</td></tr><tr><td><code>scenarioType</code></td><td>string</td><td>Yes</td><td>Scenario Type</td></tr><tr><td><code>showMyView</code></td><td>boolean</td><td>No</td></tr></tbody></table> Controls scenario version selection:
-<ul><li><code>false</code> (default): Returns base version of Scenarios regardless of your checked out activity</li>
-<li><code>true</code>: Returns user's checked-out version if available, otherwise falls back to base version |</li>
-<p></ul>| <code>user_id</code> | string | Yes | Login username (email) |</p>
-<p>| <code>api_key</code> | string | Yes | API key of the user for authentication. Obtain this from your AccelQ user profile. |</p>
-<p>| <code>pageNumber</code> | integer | No | Page number for pagination. Use this to navigate through large result sets efficiently. |</p>
-<p>| <code>pageSize</code> | integer | No | Number of Scenarios to return per page.</p>
-
-<strong>Constraints</strong>:
-<ul><li>Minimum: 1</li>
-<li>Maximum: 25</li>
-<li>Default: 20 |</li>
-<p></ul></p>
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>accelqLoginUrl</code></td><td>string</td><td>Yes</td><td>ACCELQ login URL (e.g., https://yourcompany.accelq.io)</td></tr><tr><td><code>tenantCode</code></td><td>string</td><td>Yes</td><td>URL parameter: tenantCode</td></tr><tr><td><code>projectName</code></td><td>string</td><td>Yes</td><td>URL parameter: projectName</td></tr><tr><td><code>scenarioType</code></td><td>string</td><td>Yes</td><td>Scenario Type</td></tr><tr><td><code>showMyView</code></td><td>boolean</td><td>No</td><td>Controls scenario version selection:<br>- <code>false</code> (default): Returns base version of Scenarios regardless of your checked out activity<br>- <code>true</code>: Returns user's checked-out version if available, otherwise falls back to base version</td></tr><tr><td><code>user_id</code></td><td>string</td><td>Yes</td><td>Login username (email)</td></tr><tr><td><code>api_key</code></td><td>string</td><td>Yes</td><td>API key of the user for authentication. Obtain this from your AccelQ user profile.</td></tr><tr><td><code>pageNumber</code></td><td>integer</td><td>No</td><td>Page number for pagination. Use this to navigate through large result sets efficiently.</td></tr><tr><td><code>pageSize</code></td><td>integer</td><td>No</td><td>Number of Scenarios to return per page.<br><br><strong>Constraints</strong>:<br>- Minimum: 1<br>- Maximum: 25<br>- Default: 20</td></tr></tbody></table>
 
 <h2>Request Body</h2>
 
