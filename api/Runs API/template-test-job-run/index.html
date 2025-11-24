@@ -105,6 +105,25 @@ cURL Command Builder
 			observer.observe(document.body);
 		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"POST","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/{projectCode}/test-exec/jobs/templates/{templateJobId}/run","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"projectCode":{"type":"string","description":"Project code","required":true,"default":"project_code","in":"path"},"templateJobId":{"type":"number","description":"Job Id of the template job to be executed.","required":true,"in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X POST \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectCode}}/test-exec/jobs/templates/${{templateJobId}}/run\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"runProperties\": {\n    \"totalTickets\": \"10\",\n    \"maxPrice\": \"4000\"\n  }\n}'"};
 
+  // Check for embed mode via query parameter
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isEmbed = urlParams.get('embed') === 'true';
+
+    if (isEmbed) {
+      document.body.classList.add('embed-mode');
+      // Hide the h1 (API name) and first paragraph (description)
+      const renderedContent = document.querySelector('.rendered-content');
+      if (renderedContent) {
+        const h1 = renderedContent.querySelector('h1');
+        if (h1) h1.style.display = 'none';
+        // Hide the first paragraph after h1 (description)
+        const firstP = renderedContent.querySelector('p');
+        if (firstP) firstP.style.display = 'none';
+      }
+    }
+  })();
+
   // Get the curl template
   const curlTemplate = interactiveData.curlContent;
 
