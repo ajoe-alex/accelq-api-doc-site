@@ -18,7 +18,7 @@
 			window.addEventListener("load", () => {
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
-					{ type: "IFRAME_HEIGHT", height },
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height , url: window.location.href},
 					"*",
 				);
 			});
@@ -27,7 +27,7 @@
 			const observer = new ResizeObserver(() => {
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
-					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height , url: window.location.href},
 					"*",
 				);
 			});
