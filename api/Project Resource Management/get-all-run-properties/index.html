@@ -142,7 +142,26 @@ Interactive Section
   -H &quot;user_id: ${{user_id}}&quot; \
   -H &quot;api_key: ${{api_key}}&quot; \
   -H &quot;Content-Type: application/json&quot; \
-  -H &quot;Accept: application/json&quot;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> </body></html> <script>(function(){const interactiveData = {"method":"GET","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/res/run-property","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code for which to retrieve Run Property.","required":true,"default":"project_code","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"},"page":{"type":"integer","description":"Page number for pagination.","required":false,"in":"query"},"pageSize":{"type":"integer","description":"Number of items per page (Maximum: 100).","required":false,"in":"query"}},"curlContent":"curl -X GET \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/res/run-property\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\""};
+  -H &quot;Accept: application/json&quot;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			// Notify parent iframe of content height
+			window.addEventListener("load", () => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+
+			// Observe DOM changes to update height dynamically
+			const observer = new ResizeObserver(() => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+			observer.observe(document.body);
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"GET","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/res/run-property","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code for which to retrieve Run Property.","required":true,"default":"project_code","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"},"page":{"type":"integer","description":"Page number for pagination.","required":false,"in":"query"},"pageSize":{"type":"integer","description":"Number of items per page (Maximum: 100).","required":false,"in":"query"}},"curlContent":"curl -X GET \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/res/run-property\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\""};
 
   // Get the curl template
   const curlTemplate = interactiveData.curlContent;

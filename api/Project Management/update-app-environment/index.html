@@ -57,7 +57,26 @@ Interactive Section
   &quot;pid&quot;: 15754,
   &quot;appEnvironmentName&quot;: &quot;Updated App Environment&quot;,
   &quot;description&quot;: &quot;Updated description&quot;
-}&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> </body></html> <script>(function(){const interactiveData = {"method":"PUT","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/conf/app-environments/{appEnvironmentId}","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code for which to update the app environment.","required":true,"default":"project_code","in":"path"},"appEnvironmentId":{"type":"integer","description":"The ID of the App Environment to update.","required":true,"in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X PUT \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/conf/app-environments/${{appEnvironmentId}}\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"pid\": 15754,\n  \"appEnvironmentName\": \"Updated App Environment\",\n  \"description\": \"Updated description\"\n}'"};
+}&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			// Notify parent iframe of content height
+			window.addEventListener("load", () => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+
+			// Observe DOM changes to update height dynamically
+			const observer = new ResizeObserver(() => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+			observer.observe(document.body);
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"PUT","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/conf/app-environments/{appEnvironmentId}","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code for which to update the app environment.","required":true,"default":"project_code","in":"path"},"appEnvironmentId":{"type":"integer","description":"The ID of the App Environment to update.","required":true,"in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X PUT \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/conf/app-environments/${{appEnvironmentId}}\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"pid\": 15754,\n  \"appEnvironmentName\": \"Updated App Environment\",\n  \"description\": \"Updated description\"\n}'"};
 
   // Get the curl template
   const curlTemplate = interactiveData.curlContent;

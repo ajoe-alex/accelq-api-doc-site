@@ -106,7 +106,26 @@ Interactive Section
       &quot;externalIntegrationProject&quot;: &quot;SanityWorkSpace&quot;
     }
   }
-]&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> </body></html> <script>(function(){const interactiveData = {"method":"PATCH","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/{projectName}/scn/scenarios/{scenarioType}/bulk-update","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"projectName":{"type":"string","description":"URL parameter: projectName","required":true,"default":"projectName","in":"path"},"scenarioType":{"type":"string","description":"Scenario Type","required":true,"in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication. Obtain this from your AccelQ user profile.","required":true,"in":"header"}},"curlContent":"curl -X PATCH \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/bulk-update\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '[\n  {\n    \"scenarioIds\": [\n      1,\n      2\n    ],\n    \"requirementTraceability\": {\n      \"requirementKeys\": [\n        \"TP-11\",\n        \"TP-31\"\n      ],\n      \"updateType\": \"APPEND\",\n      \"externalIntegrationProject\": \"SanityWorkSpace\"\n    }\n  },\n  {\n    \"scenarioIds\": [\n      98,\n      102\n    ],\n    \"requirementTraceability\": {\n      \"requirementKeys\": [\n        \"TP-51\",\n        \"TP-319\",\n        \"TP-987\"\n      ],\n      \"updateType\": \"OVERRIDE\",\n      \"externalIntegrationProject\": \"SanityWorkSpace\"\n    }\n  }\n]'"};
+]&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			// Notify parent iframe of content height
+			window.addEventListener("load", () => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+
+			// Observe DOM changes to update height dynamically
+			const observer = new ResizeObserver(() => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+			observer.observe(document.body);
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"PATCH","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/{projectName}/scn/scenarios/{scenarioType}/bulk-update","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"projectName":{"type":"string","description":"URL parameter: projectName","required":true,"default":"projectName","in":"path"},"scenarioType":{"type":"string","description":"Scenario Type","required":true,"in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication. Obtain this from your AccelQ user profile.","required":true,"in":"header"}},"curlContent":"curl -X PATCH \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/bulk-update\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '[\n  {\n    \"scenarioIds\": [\n      1,\n      2\n    ],\n    \"requirementTraceability\": {\n      \"requirementKeys\": [\n        \"TP-11\",\n        \"TP-31\"\n      ],\n      \"updateType\": \"APPEND\",\n      \"externalIntegrationProject\": \"SanityWorkSpace\"\n    }\n  },\n  {\n    \"scenarioIds\": [\n      98,\n      102\n    ],\n    \"requirementTraceability\": {\n      \"requirementKeys\": [\n        \"TP-51\",\n        \"TP-319\",\n        \"TP-987\"\n      ],\n      \"updateType\": \"OVERRIDE\",\n      \"externalIntegrationProject\": \"SanityWorkSpace\"\n    }\n  }\n]'"};
 
   // Get the curl template
   const curlTemplate = interactiveData.curlContent;

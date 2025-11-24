@@ -92,7 +92,26 @@ Interactive Section
       &quot;isAdmin&quot;: true
     }
   ]
-}&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> </body></html> <script>(function(){const interactiveData = {"method":"POST","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/administration/projects","headers":{"user_id":"<user_id>","api_key":"<api_key>","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X POST \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/administration/projects\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"projectName\": \"New Project\",\n  \"description\": \"Description for the new project\",\n  \"cloneConfigFromProjectPid\": 5,\n  \"assignedUsers\": [\n    {\n      \"userEmail\": \"user@example.com\",\n      \"role\": \"developer\",\n      \"isAdmin\": true\n    }\n  ]\n}'"};
+}&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			// Notify parent iframe of content height
+			window.addEventListener("load", () => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+
+			// Observe DOM changes to update height dynamically
+			const observer = new ResizeObserver(() => {
+				const height = document.body.scrollHeight;
+				window.parent.postMessage(
+					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
+					"*"
+				);
+			});
+			observer.observe(document.body);
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"POST","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/administration/projects","headers":{"user_id":"<user_id>","api_key":"<api_key>","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X POST \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/administration/projects\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"projectName\": \"New Project\",\n  \"description\": \"Description for the new project\",\n  \"cloneConfigFromProjectPid\": 5,\n  \"assignedUsers\": [\n    {\n      \"userEmail\": \"user@example.com\",\n      \"role\": \"developer\",\n      \"isAdmin\": true\n    }\n  ]\n}'"};
 
   // Get the curl template
   const curlTemplate = interactiveData.curlContent;
