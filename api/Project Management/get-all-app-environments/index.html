@@ -106,12 +106,18 @@ Interactive Section
   -H &quot;api_key: ${{api_key}}&quot; \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;Accept: application/json&quot;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			function zoomOut(factor = 0.9) {
+				document.body.style.transform = `scale(${factor})`;
+				document.body.style.transformOrigin = "0 0";
+				document.body.style.width = `${100 / factor}%`;
+			}
+			zoomOut(0.8);
 			// Notify parent iframe of content height
 			window.addEventListener("load", () => {
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
 					{ type: "IFRAME_HEIGHT", height },
-					"*"
+					"*",
 				);
 			});
 
@@ -120,7 +126,7 @@ Interactive Section
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
 					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
-					"*"
+					"*",
 				);
 			});
 			observer.observe(document.body);

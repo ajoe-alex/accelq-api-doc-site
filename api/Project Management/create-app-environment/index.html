@@ -64,12 +64,18 @@ Interactive Section
   &quot;appEnvironmentName&quot;: &quot;New App Environment&quot;,
   &quot;description&quot;: &quot;Description for the new app environment&quot;
 }&#39;</pre> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> </section> </article>  </main> <script>
+			function zoomOut(factor = 0.9) {
+				document.body.style.transform = `scale(${factor})`;
+				document.body.style.transformOrigin = "0 0";
+				document.body.style.width = `${100 / factor}%`;
+			}
+			zoomOut(0.8);
 			// Notify parent iframe of content height
 			window.addEventListener("load", () => {
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
 					{ type: "IFRAME_HEIGHT", height },
-					"*"
+					"*",
 				);
 			});
 
@@ -78,7 +84,7 @@ Interactive Section
 				const height = document.body.scrollHeight;
 				window.parent.postMessage(
 					{ id: "aq_content", type: "IFRAME_HEIGHT", height },
-					"*"
+					"*",
 				);
 			});
 			observer.observe(document.body);
