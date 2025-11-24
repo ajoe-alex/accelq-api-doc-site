@@ -186,7 +186,7 @@ Interactive Section
 			zoomOut(0.8);
 			// Notify parent iframe of content height
 			window.addEventListener("load", () => {
-				const height = document.body.scrollHeight;
+				const height = document.scrollingElement.scrollHeight;
 				window.parent.postMessage(
 					{ id: "aq_content", type: "IFRAME_HEIGHT", height , url: window.location.href},
 					"*",
@@ -195,7 +195,7 @@ Interactive Section
 
 			// Observe DOM changes to update height dynamically
 			const observer = new ResizeObserver(() => {
-				const height = document.body.scrollHeight;
+				const height = document.scrollingElement.scrollHeight;
 				window.parent.postMessage(
 					{ id: "aq_content", type: "IFRAME_HEIGHT", height , url: window.location.href},
 					"*",
