@@ -25,7 +25,7 @@ html body{padding:0;margin:0}.api-doc[data-astro-cid-hoo3v4jr]{max-width:100%}.a
 
 <h2>Request Body</h2>
 
-<div class="code-block payload-block"><div class="code-header"><span class="lang">json</span><button class="copy-btn" onclick="navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').textContent)">Copy</button></div><pre><code>{
+<div class="code-block payload-block"><div class="code-header"><span class="lang">json</span><button class="copy-btn code-copy-btn">Copy</button></div><pre><code>{
   "filter": {
     "scenarioIds": [
       1,
@@ -166,7 +166,7 @@ cURL Command Builder
 **Constraints**:
 - Minimum: 1
 - Maximum: 25
-- Default: 20" data-astro-cid-hoo3v4jr> </div> </div> <div class="curl-block" data-astro-cid-hoo3v4jr> <div class="curl-header" data-astro-cid-hoo3v4jr> <h4 data-astro-cid-hoo3v4jr>Request Sample (cURL)</h4> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> <pre id="curl-output" data-astro-cid-hoo3v4jr>curl -X POST &quot;${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/fetch-details&quot; \
+- Default: 20" data-astro-cid-hoo3v4jr> </div> </div> <div class="curl-block" data-astro-cid-hoo3v4jr> <div class="curl-header" data-astro-cid-hoo3v4jr> <h4 data-astro-cid-hoo3v4jr>Request Sample (cURL)</h4> <button class="copy-btn" id="copy-curl-btn" data-astro-cid-hoo3v4jr>Copy</button> </div> <pre id="curl-output" data-astro-cid-hoo3v4jr>curl -X POST &quot;${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/fetch-details?showMyView=${{showMyView}}&amp;pageNumber=${{pageNumber}}&amp;pageSize=${{pageSize}}&quot; \
   -H &quot;user_id: ${{user_id}}&quot; \
   -H &quot;api_key: ${{api_key}}&quot; \
   -H &quot;Content-Type: application/json&quot; \
@@ -236,7 +236,7 @@ cURL Command Builder
 				);
 			});
 			observer.observe(document.body);
-		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"POST","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/{projectName}/scn/scenarios/{scenarioType}/fetch-details","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"projectName":{"type":"string","description":"URL parameter: projectName","required":true,"default":"projectName","in":"path"},"scenarioType":{"type":"string","description":"Scenario Type","required":true,"in":"path"},"showMyView":{"type":"boolean","description":"Controls scenario version selection:\n- `false` (default): Returns base version of Scenarios regardless of your checked out activity\n- `true`: Returns user's checked-out version if available, otherwise falls back to base version","required":false,"in":"query"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication. Obtain this from your AccelQ user profile.","required":true,"in":"header"},"pageNumber":{"type":"integer","description":"Page number for pagination. Use this to navigate through large result sets efficiently.","required":false,"in":"query"},"pageSize":{"type":"integer","description":"Number of Scenarios to return per page.\n\n**Constraints**:\n- Minimum: 1\n- Maximum: 25\n- Default: 20","required":false,"in":"query"}},"curlContent":"curl -X POST \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/fetch-details\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"filter\": {\n    \"scenarioIds\": [\n      1,\n      3,\n      8\n    ],\n    \"requirementKeys\": [\n      \"TP-12\",\n      \"TP-59\"\n    ]\n  },\n  \"fetchDetails\": {\n    \"steps\": true,\n    \"requirementTraceability\": true,\n    \"metadata\": true\n  }\n}'"};
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"POST","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenantCode}/{projectName}/scn/scenarios/{scenarioType}/fetch-details","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenantCode":{"type":"string","description":"URL parameter: tenantCode","required":true,"default":"tenantCode","in":"path"},"projectName":{"type":"string","description":"URL parameter: projectName","required":true,"default":"projectName","in":"path"},"scenarioType":{"type":"string","description":"Scenario Type","required":true,"in":"path"},"showMyView":{"type":"boolean","description":"Controls scenario version selection:\n- `false` (default): Returns base version of Scenarios regardless of your checked out activity\n- `true`: Returns user's checked-out version if available, otherwise falls back to base version","required":false,"in":"query"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication. Obtain this from your AccelQ user profile.","required":true,"in":"header"},"pageNumber":{"type":"integer","description":"Page number for pagination. Use this to navigate through large result sets efficiently.","required":false,"in":"query"},"pageSize":{"type":"integer","description":"Number of Scenarios to return per page.\n\n**Constraints**:\n- Minimum: 1\n- Maximum: 25\n- Default: 20","required":false,"in":"query"}},"curlContent":"curl -X POST \"${{accelqLoginUrl}}/awb/api/2.0/${{tenantCode}}/${{projectName}}/scn/scenarios/${{scenarioType}}/fetch-details?showMyView=${{showMyView}}&pageNumber=${{pageNumber}}&pageSize=${{pageSize}}\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '{\n  \"filter\": {\n    \"scenarioIds\": [\n      1,\n      3,\n      8\n    ],\n    \"requirementKeys\": [\n      \"TP-12\",\n      \"TP-59\"\n    ]\n  },\n  \"fetchDetails\": {\n    \"steps\": true,\n    \"requirementTraceability\": true,\n    \"metadata\": true\n  }\n}'"};
 
   // Check for embed mode via query parameter
   (function() {
@@ -287,12 +287,23 @@ cURL Command Builder
     input.addEventListener('input', updateCurl);
   });
 
-  // Copy button
+  // Copy button for cURL
   document.getElementById('copy-curl-btn').addEventListener('click', () => {
     const curlText = document.getElementById('curl-output').textContent;
     navigator.clipboard.writeText(curlText);
     const btn = document.getElementById('copy-curl-btn');
     btn.textContent = 'Copied!';
     setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+
+  // Copy buttons for code blocks (payload and regular code blocks)
+  document.querySelectorAll('.code-copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-block');
+      const codeText = codeBlock.querySelector('code').textContent;
+      navigator.clipboard.writeText(codeText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
   });
 })();</script> 

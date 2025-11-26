@@ -153,12 +153,23 @@ cURL Command Builder
     input.addEventListener('input', updateCurl);
   });
 
-  // Copy button
+  // Copy button for cURL
   document.getElementById('copy-curl-btn').addEventListener('click', () => {
     const curlText = document.getElementById('curl-output').textContent;
     navigator.clipboard.writeText(curlText);
     const btn = document.getElementById('copy-curl-btn');
     btn.textContent = 'Copied!';
     setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+
+  // Copy buttons for code blocks (payload and regular code blocks)
+  document.querySelectorAll('.code-copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-block');
+      const codeText = codeBlock.querySelector('code').textContent;
+      navigator.clipboard.writeText(codeText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
   });
 })();</script> 

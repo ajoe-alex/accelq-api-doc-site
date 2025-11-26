@@ -20,7 +20,7 @@ html body{padding:0;margin:0}.api-doc[data-astro-cid-hoo3v4jr]{max-width:100%}.a
 
 <h2>Request Body</h2>
 
-<div class="code-block payload-block"><div class="code-header"><span class="lang">json</span><button class="copy-btn" onclick="navigator.clipboard.writeText(this.closest('.code-block').querySelector('code').textContent)">Copy</button></div><pre><code>"Input string"
+<div class="code-block payload-block"><div class="code-header"><span class="lang">json</span><button class="copy-btn code-copy-btn">Copy</button></div><pre><code>"Input string"
 </code></pre></div>
 
 
@@ -59,7 +59,8 @@ cURL Command Builder
   -H &quot;user_id: ${{user_id}}&quot; \
   -H &quot;api_key: ${{api_key}}&quot; \
   -H &quot;Content-Type: application/json&quot; \
-  -H &quot;Accept: application/json&quot;</pre> </div> </section> </article>  </main> <script>
+  -H &quot;Accept: application/json&quot; \
+  -d &#39;&quot;Input string&quot;&#39;</pre> </div> </section> </article>  </main> <script>
 			// Check for embed mode and add class to main
 			(function() {
 				const urlParams = new URLSearchParams(window.location.search);
@@ -107,7 +108,7 @@ cURL Command Builder
 				);
 			});
 			observer.observe(document.body);
-		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"GET","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/res/encrypt","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code.","required":true,"default":"project_code","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X GET \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/res/encrypt\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\""};
+		</script> </body> </html>  <script>(function(){const interactiveData = {"method":"GET","request_url":"{accelqLoginUrl}/awb/api/2.0/{tenant_code}/{projectCode}/res/encrypt","headers":{"user_id":"Login username (email)","api_key":"API key of the user for authentication","Content-Type":"application/json","Accept":"application/json"},"parameters":{"accelqLoginUrl":{"type":"string","description":"ACCELQ login URL (e.g., https://yourcompany.accelq.io)","required":true,"default":"https://acme.accelq.io","in":"path"},"tenant_code":{"type":"string","description":"Your tenant code","required":true,"default":"tenant_code","in":"path"},"projectCode":{"type":"string","description":"The project code.","required":true,"default":"project_code","in":"path"},"user_id":{"type":"string","description":"Login username (email)","required":true,"in":"header"},"api_key":{"type":"string","description":"API key of the user for authentication","required":true,"in":"header"}},"curlContent":"curl -X GET \"${{accelqLoginUrl}}/awb/api/2.0/${{tenant_code}}/${{projectCode}}/res/encrypt\" \\\n  -H \"user_id: ${{user_id}}\" \\\n  -H \"api_key: ${{api_key}}\" \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Accept: application/json\" \\\n  -d '\"Input string\"'"};
 
   // Check for embed mode via query parameter
   (function() {
@@ -158,12 +159,23 @@ cURL Command Builder
     input.addEventListener('input', updateCurl);
   });
 
-  // Copy button
+  // Copy button for cURL
   document.getElementById('copy-curl-btn').addEventListener('click', () => {
     const curlText = document.getElementById('curl-output').textContent;
     navigator.clipboard.writeText(curlText);
     const btn = document.getElementById('copy-curl-btn');
     btn.textContent = 'Copied!';
     setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+
+  // Copy buttons for code blocks (payload and regular code blocks)
+  document.querySelectorAll('.code-copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.closest('.code-block');
+      const codeText = codeBlock.querySelector('code').textContent;
+      navigator.clipboard.writeText(codeText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
   });
 })();</script> 
